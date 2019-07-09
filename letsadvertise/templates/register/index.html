@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>index</title>
+  </head>
+  <body>
+    <h1>this is the landing page of lets advertise</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="">Home <span class="sr-only">(current)</span></a>
+{% if user.is_authenticated  %}
+        <a class="nav-item nav-link" href="{% url 'profile' %}">profile</a>
+        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+
+{% else %}
+        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+{% endif %}
+      </div>
+    </div>
+  </nav>
+
+
+welcome to Lets advertise.
+
+Are you searching for the right platform to growing your business.
+you have came to right place.
+
+Are you not getting the right amount of viewers to you content?
+
+
+imagine bob is a blogger. he writes a blog about different topics like health,
+spiritual content,yoga and how to have a healthy and peaceful life which is the
+most needed things in the world right now. But he isn't getting the right amount
+of the traffic/viewers as per his content,not because his content is not good
+in fact his content is great because at last only content is the things that helps
+to grow your business..
+
+After that bob contacted us and we advertise for him .. his job is not to advertise
+but to write a quality content.
+But we are advertiser,we have huge databases of records that helps bob to expand his
+horizon.
+
+
+we understand the market and know what is trending in the market and how to put the right
+heading and the clickbait for the users to attract the users..
+
+
+
+
+
+
+
+
+
+
+
+
+ we are here for you.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

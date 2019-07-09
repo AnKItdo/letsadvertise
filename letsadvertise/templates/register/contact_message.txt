@@ -1,0 +1,9 @@
+you received a messages
+
+{{user}}
+
+this is what they Said
+{{message}}
+
+reply to this mail
+{{email}}

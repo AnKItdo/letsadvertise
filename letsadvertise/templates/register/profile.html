@@ -1,0 +1,53 @@
+{% load crispy_forms_tags %}
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>profile</title>
+  </head>
+  <body>
+
+
+
+<div class="content-section">
+  <div class="media">
+    <img style = " border-radius: 50%;"  src="{{user.profile.image.url}}" alt="">
+    <div class="media-body">
+
+      <h2 class="account-heading">{{user.username}}</h2>
+      <p class="text-secondary">{{user.email}}</p>
+
+    </div>
+  </div>
+
+
+  <form method="post" enctype = "multipart/form-data">
+    {% csrf_token %}
+    {{ u_form |crispy  }}
+    {{ p_form |crispy  }}
+
+
+
+
+
+  </div>
+    <button class ="btn btn-primary"type="submit">Update</button>
+
+
+
+<a href="/sms">SEND SMS</a>
+<a href="/mail">SEND MAIL</a>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

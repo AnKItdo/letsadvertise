@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body>
+    {% block content %}
+      <h2>Sign up</h2>
+      <div class="container">
+        <div class="jumbotron">
+
+
+      <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+          <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+            {% if field.help_text %}
+              <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
+            {% endfor %}
+
+        {% endfor %}<br>
+        <button class ="btn btn-primary"type="submit">Sign up</button>
+      </form>
+    {% endblock %}
+
+    Already have an account? <a href="{% url 'login'  %}">Login</a>
+
+  </div>
+
+</div>
+  </body>
+</html>
