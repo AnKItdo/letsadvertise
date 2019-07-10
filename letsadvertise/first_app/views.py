@@ -7,6 +7,7 @@ from .form import registerForm
 from .form import SMSForm
 from .form import EMAILForm
 from .form import GMAILForm
+from .form import WHATSAPPForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AdminPasswordChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
@@ -108,23 +109,27 @@ def mail(request):
 
 
 
-# @login_required
-# def gmail(request):
-#     if request.method == 'POST':
-#         form = GMAILForm(request.POST)
-#         if form.is_valid():
-#             return redirect('profile')
-#
-#     form = GMAILForm()
-#     return render(request,'register/gmail.html',{'form':form})
+@login_required
+def whatsapp(request):
+    if request.method == 'POST':
+        form = SMSForm(request.POST)
+        if form.is_valid():
+            account_sid = 'AC6bbcf711c12791e6859dbb27103414d5'
+            auth_token = 'd1ed9391046e2712c2e969ac552c4f48'
+            client = Client(account_sid, auth_token)
 
+            message = client.messages \
+                .create(
+                     from_=  form.cleaned_data ['from_'],
+                     body= form.cleaned_data['message'],
+                     to=  form.cleaned_data ['to'],
+                 )
 
+            print(message.sid)
 
-
-#
-# @login_required
-# def mail(request):
-#     return render(request,'register/mail.html',{'form':form})
+            return redirect('index')
+    form = WHATSAPPForm()
+    return render(request,'register/whatsapp.html',{'form':form})
 
 
 
@@ -145,8 +150,9 @@ def register(request):
             form.save()
 
             username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
             raw_password = form.cleaned_data.get('password1')
-            # User = authenticate(username=username, password=raw_password)
+            #User = authenticate(email=email, password=raw_password)
             # login(request, user)
             return redirect('login')
     else:

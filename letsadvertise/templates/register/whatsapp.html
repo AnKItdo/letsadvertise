@@ -1,0 +1,46 @@
+{% load crispy_forms_tags %}
+
+
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body>
+
+    {%block content %}
+
+
+
+<div class="conatiner">
+
+  <div class="jumbotron">
+
+
+<h1>Please use 'whatsapp:' before adding numbers</h1>
+<form class="" action="" method="post">
+  {% csrf_token %}
+
+<div class="container">
+  <div class="jumbotron">
+
+
+  {{form |crispy }}
+
+
+<button  type="submit" class ="btn btn-success" name="button">Send </button>
+
+</form>
+
+</div>
+
+</div>
+
+
+    {% endblock content %}
+
+  </body>
+</html>

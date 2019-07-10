@@ -40,3 +40,108 @@
 </div>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title></title>
+  </head>
+  <body>
+
+      <h2>Sign up</h2>
+      <div class="container">
+        <div class="jumbotron">
+
+
+      <form method="post">
+         {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="rLGDtH46ByvERu0SlM6PRHAx0QHh42fgYET5UvEMpoq9vX7YNHOi1RaVxXFqiOLz">
+
+
+
+          <p>
+            <label for="id_username">Username:</label><br>
+            <input type="text" name="username" maxlength="150" autofocus required id="id_username">
+
+
+
+
+
+
+          <p>
+            <label for="id_first_name">First name:</label><br>
+            <input type="text" name="first_name" maxlength="30" id="id_first_name">
+
+
+
+
+
+
+          <p>
+            <label for="id_last_name">Last name:</label><br>
+            <input type="text" name="last_name" maxlength="30" id="id_last_name">
+
+
+
+
+
+
+          <p>
+            <label for="id_email">Email:</label><br>
+            <input type="email" name="email" maxlength="254" required id="id_email">
+
+
+
+
+
+
+          <p>
+            <label for="id_password1">Password:</label><br>
+            <input type="password" name="password1" required id="id_password1">
+
+
+
+
+
+
+          <p>
+            <label for="id_password2">Password confirmation:</label><br>
+            <input type="password" name="password2" required id="id_password2">
+
+
+
+
+
+        <br>
+        <button class ="btn btn-success"type="submit">Sign up</button>
+      </form>
+
+
+    Already have an account? <a href="/login/">Login</a>
+
+  </div>
+
+</div>
+  </body>
+</html> -->

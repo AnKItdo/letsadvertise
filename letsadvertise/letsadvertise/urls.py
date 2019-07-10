@@ -36,6 +36,8 @@ urlpatterns = [
     path('mail/',views.mail,name ='mail'),
     path('gmail/',views.mail,name ='gmail'),
     path('sms/',views.sms,name = 'sms'),
+    path('whatsapp/',views.whatsapp,name = 'whatsapp'),
+
 ]
 
 

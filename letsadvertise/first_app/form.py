@@ -38,13 +38,13 @@ class SMSForm(forms.Form):
     message = forms.CharField(widget = forms.Textarea)
     to = forms.CharField()
 
-# class EMAILForm(forms.Form):
-#     From_= forms.CharField()
-#     Mail = forms.CharField(widget = forms.Textarea)
-#     To = forms.CharField()
 
 
 
+class WHATSAPPForm(forms.Form):
+    from_ = forms.CharField()
+    message = forms.CharField(widget = forms.Textarea)
+    to = forms.CharField()
 
 
 class EMAILForm(forms.Form):
